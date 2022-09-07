@@ -163,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   builder: (context) =>
                                       Specifics(_CountryList[index]),
                                 )),
-                            child: Container(
+                            child: SizedBox(
                               height: 60,
                               width: 80,
                               child: Text(
@@ -173,9 +173,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                         ),
-                        title: Text('Total Cases: ' + _foundusers[index].cases),
-                        subtitle: Text('Total deaths: ' +
-                            '${_foundusers[index].deaths.toString()}'),
+                        title: Text('Total Cases: ${_foundusers[index].cases}'),
+                        subtitle:
+                            Text('Total deaths: ${_foundusers[index].deaths}'),
                       ),
                     )
                   : const Text(
@@ -227,7 +227,7 @@ class CustomSearch extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<Countries>? cl = this.CountryList;
+    List<Countries>? cl = CountryList;
     List<Countries> filteredCountries = [];
 
     for (var items in cl!) {
